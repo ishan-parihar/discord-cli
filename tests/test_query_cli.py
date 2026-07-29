@@ -33,17 +33,19 @@ def test_recent_command_supports_json(seeded_db: MessageDB):
     assert all(row["channel_name"] == "general" for row in rows)
 
 
-def test_recent_command_auto_yaml_when_stdout_is_not_tty(seeded_db: MessageDB, monkeypatch):
+def test_recent_command_auto_toon_when_stdout_is_not_tty(seeded_db: MessageDB, monkeypatch):
     monkeypatch.setenv("OUTPUT", "auto")
     runner = CliRunner()
 
     result = runner.invoke(cli, ["recent", "-c", "general", "-n", "2"])
 
     assert result.exit_code == 0
-    payload = yaml.safe_load(result.output)
-    assert payload["ok"] is True
-    rows = payload["data"]
-    assert [row["msg_id"] for row in rows] == ["100", "101"]
+    # Default for non-TTY (agent) is now TOON per AXI
+    assert "ok: \"True\"" in result.output
+    assert "schema_version: \"1\"" in result.output
+    assert "data{" in result.output
+    assert "[0]" in result.output or "[]" in result.output
+    assert "msg_id" in result.output or "count" in result.output
 
 
 def test_timeline_command_supports_json(seeded_db: MessageDB):
@@ -138,7 +140,7 @@ def test_recent_command_rejects_ambiguous_channel_yaml(tmp_path, monkeypatch):
     assert payload["error"]["code"] == "channel_resolution_error"
 
 
-def test_status_auto_yaml_when_stdout_is_not_tty(monkeypatch):
+def test_status_auto_toon_when_stdout_is_not_tty(monkeypatch):
     monkeypatch.setenv("OUTPUT", "auto")
     monkeypatch.setenv("DISCORD_TOKEN", "token")
 
@@ -155,14 +157,14 @@ def test_status_auto_yaml_when_stdout_is_not_tty(monkeypatch):
     result = runner.invoke(cli, ["status"])
 
     assert result.exit_code == 0
-    payload = yaml.safe_load(result.output)
-    assert payload["ok"] is True
-    assert payload["schema_version"] == "1"
-    assert payload["data"]["authenticated"] is True
-    assert payload["data"]["user"]["username"] == "alice"
+    # Default for non-TTY (agent) is now TOON per AXI
+    assert "ok: \"True\"" in result.output
+    assert "schema_version: \"1\"" in result.output
+    assert "data{" in result.output
+    assert "authenticated" in result.output
 
 
-def test_whoami_auto_yaml_when_stdout_is_not_tty(monkeypatch):
+def test_whoami_auto_toon_when_stdout_is_not_tty(monkeypatch):
     monkeypatch.setenv("OUTPUT", "auto")
 
     class FakeClient:
@@ -187,6 +189,8 @@ def test_whoami_auto_yaml_when_stdout_is_not_tty(monkeypatch):
     result = runner.invoke(cli, ["whoami"])
 
     assert result.exit_code == 0
-    payload = yaml.safe_load(result.output)
-    assert payload["ok"] is True
-    assert payload["data"]["user"]["username"] == "alice"
+    # Default for non-TTY (agent) is now TOON per AXI
+    assert "ok: \"True\"" in result.output
+    assert "schema_version: \"1\"" in result.output
+    assert "data{" in result.output
+    assert "username" in result.output

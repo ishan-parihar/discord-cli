@@ -28,7 +28,10 @@ _TOON_FIELD_SEP = ","
 
 
 def default_structured_format(*, as_json: bool, as_yaml: bool, as_toon: bool) -> str | None:
-    """Resolve explicit flags first, then env override, then TTY default."""
+    """Resolve explicit flags first, then env override, then TTY default.
+    
+    Non-TTY (agent) environments default to TOON per AXI.
+    """
     if sum([as_json, as_yaml, as_toon]) > 1:
         raise click.UsageError("Use only one of --json, --yaml, or --toon.")
     if as_yaml:
@@ -48,8 +51,9 @@ def default_structured_format(*, as_json: bool, as_yaml: bool, as_toon: bool) ->
     if output_mode == "rich":
         return None
 
+    # AXI: non-TTY (agent) environments default to TOON
     if not sys.stdout.isatty():
-        return "yaml"
+        return "toon"
     return None
 
 
