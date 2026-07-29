@@ -1,0 +1,35 @@
+<svg width="1200" height="140" viewBox="0 0 1200 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Quick Start section header</title>
+  <desc>Gradient bar with section title "Quick Start" and terminal motif</desc>
+
+  <defs>
+    <linearGradient id="headerGradient" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="50%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3fb950"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="140" fill="url(#headerGradient)"/>
+
+  <g opacity="0.03" fill="none" stroke="#ffffff" stroke-width="0.5">
+    <line x1="0" y1="0" x2="1200" y2="140"/>
+    <line x1="0" y1="140" x2="1200" y2="0"/>
+  </g>
+
+  <rect x="60" y="30" width="4" height="80" fill="url(#accentGradient)" rx="2"/>
+
+  <g transform="translate(80, 55)">
+    <text x="0" y="0" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="18" font-weight="500" fill="#3fb950">discord $</text>
+    <text x="0" y="30" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="14" fill="#8b949e">discord auth --save</text>
+  </g>
+
+  <text x="600" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="700" fill="#e6edf3" text-anchor="middle" letter-spacing="-0.02em">Quick Start</text>
+  <text x="600" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="400" fill="#8b949e" text-anchor="middle">Authenticate, sync, query — in four commands</text>
+
+  <rect x="1136" y="30" width="4" height="80" fill="url(#accentGradient)" rx="2"/>
+</svg>

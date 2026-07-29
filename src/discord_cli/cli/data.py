@@ -1,15 +1,21 @@
 """Data commands — export, purge."""
 
 import json
-import os
-import sys
 
 import click
 from rich.console import Console
 import yaml
 
 from ._channels import resolve_channel_id_or_raise
-from ._output import default_structured_format, error_payload
+from ._output import (
+    build_help_hints,
+    dump_structured,
+    emit_error,
+    emit_structured,
+    fields_option,
+    full_option,
+    structured_output_options,
+)
 from ..db import MessageDB
 
 console = Console(stderr=True)
@@ -23,34 +29,93 @@ def data_group():
 
 @data_group.command("export")
 @click.argument("channel")
-@click.option("-f", "--format", "fmt", type=click.Choice(["text", "json", "yaml"]), default="text")
+@click.option("-f", "--format", "fmt", type=click.Choice(["text", "json", "yaml", "toon"]), default="text")
 @click.option("-o", "--output", "output_file", help="Output file path")
 @click.option("--hours", type=int, help="Only export last N hours")
-def export(channel: str, fmt: str, output_file: str | None, hours: int | None):
+@structured_output_options
+@fields_option
+@full_option
+def export(
+    channel: str,
+    fmt: str,
+    output_file: str | None,
+    hours: int | None,
+    as_json: bool,
+    as_yaml: bool,
+    as_toon: bool,
+    fields: str | None,
+    full: bool,
+):
     """Export messages from CHANNEL to text or JSON."""
+    field_list = fields.split(",") if fields else None
+
     with MessageDB() as db:
         channel_id = resolve_channel_id_or_raise(db, channel)
         msgs = db.get_recent(channel_id=channel_id, hours=hours, limit=100000)
 
     if not msgs:
-        structured_fmt = fmt if fmt in {"json", "yaml"} else default_structured_format(as_json=False, as_yaml=False)
-        if structured_fmt in {"json", "yaml"} and output_file is None:
-            click.echo(
-                (
-                    json.dumps(error_payload("no_messages", f"No messages found for '{channel}'."), ensure_ascii=False, indent=2, default=str)
-                    if structured_fmt == "json"
-                    else yaml.safe_dump(error_payload("no_messages", f"No messages found for '{channel}'."), allow_unicode=True, sort_keys=False, default_flow_style=False)
-                )
-            )
+        if emit_error(
+            "no_messages",
+            f"No messages found for '{channel}'.",
+            as_json=as_json,
+            as_yaml=as_yaml,
+            as_toon=as_toon,
+            help_hints=["Run 'discord dc channels <guild_id>' to list available channels"],
+        ):
             raise SystemExit(1) from None
         console.print(f"[yellow]No messages found for '{channel}'.[/yellow]")
         return
 
-    auto_yaml = fmt == "text" and output_file is None and os.getenv("OUTPUT", "auto").strip().lower() != "rich" and not sys.stdout.isatty()
+    # Apply field filter
+    if field_list:
+        msgs = [{k: v for k, v in msg.items() if k in field_list} for msg in msgs]
+
+    # Apply truncation for non-full output
+    if not full:
+        msgs = [
+            {**msg, "content": msg.get("content", "")[:300] + ("..." if len(msg.get("content", "")) > 300 else "")}
+            for msg in msgs
+        ]
+
+    # For structured output, use emit_structured
+    if as_json or as_yaml or as_toon:
+        if emit_structured(
+            msgs,
+            as_json=as_json,
+            as_yaml=as_yaml,
+            as_toon=as_toon,
+            fields=field_list,
+            total=len(msgs),
+            help_hints=build_help_hints("export", {"channel": channel}),
+            command_name="export",
+        ):
+            return
+
+    # File output for structured formats
+    if output_file:
+        if fmt in ("json", "yaml", "toon"):
+            content = dump_structured(msgs, fmt=fmt)
+        else:
+            lines = []
+            for msg in msgs:
+                ts = (msg.get("timestamp") or "")[:19]
+                sender = msg.get("sender_name") or "Unknown"
+                text = msg.get("content") or ""
+                lines.append(f"[{ts}] {sender}: {text}")
+            content = "\n".join(lines)
+
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(content)
+        console.print(f"[green]✓[/green] Exported {len(msgs)} messages to {output_file}")
+        return
+
+    # Text output to console
     if fmt == "json":
         content = json.dumps(msgs, ensure_ascii=False, indent=2, default=str)
-    elif fmt == "yaml" or auto_yaml:
+    elif fmt == "yaml":
         content = yaml.safe_dump(msgs, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    elif fmt == "toon":
+        content = dump_structured(msgs, fmt="toon")
     else:
         lines = []
         for msg in msgs:
@@ -60,12 +125,7 @@ def export(channel: str, fmt: str, output_file: str | None, hours: int | None):
             lines.append(f"[{ts}] {sender}: {text}")
         content = "\n".join(lines)
 
-    if output_file:
-        with open(output_file, "w", encoding="utf-8") as f:
-            f.write(content)
-        console.print(f"[green]✓[/green] Exported {len(msgs)} messages to {output_file}")
-    else:
-        console.print(content)
+    console.print(content)
 
 
 @data_group.command("purge")

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-labelledby="sec2-title sec2-desc">
+  <title id="sec2-title">Agent Integration</title>
+  <desc id="sec2-desc">Section banner showing TOON/YAML/JSON structured output for AI agents</desc>
+
+  <defs>
+    <linearGradient id="sec2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a371f7"/>
+      <stop offset="100%" stop-color="#d2a8ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="140" fill="#1e1e1e"/>
+
+  <text x="80" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="32" font-weight="700" fill="#d4d4d4">
+    <tspan fill="url(#sec2Grad)">Agent</tspan> Integration
+  </text>
+
+  <text x="80" y="95" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="14" fill="#858585">
+    TOON, YAML, JSON — structured output contracts for AI agents
+  </text>
+
+  <g transform="translate(720, 15)">
+    <rect width="400" height="110" rx="6" fill="#1a1a1a" stroke="#2d2d2d"/>
+    <rect width="400" height="30" rx="6" fill="#252526"/>
+    <circle cx="14" cy="15" r="5" fill="#ff5f57"/>
+    <circle cx="30" cy="15" r="5" fill="#ffbd2e"/>
+    <circle cx="46" cy="15" r="5" fill="#28ca42"/>
+    <text x="200" y="20" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#858585">$ discord search "term" --yaml</text>
+
+    <g transform="translate(12, 48)">
+      <text x="0" y="0" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#b8b8b8" line-height="1.6">
+        <tspan fill="#4ec9b0">ok:</tspan> <tspan fill="#7ee787">true</tspan>
+        <tspan x="0" dy="1.4em" fill="#4ec9b0">data:</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#dcdcaa">-</tspan> <tspan fill="#858585">msg_id:</tspan> <tspan fill="#b5cea8">"123..."</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#858585">sender:</tspan> <tspan fill="#ce9178">"alice"</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#858585">content:</tspan> <tspan fill="#ce9178">"Hello..."</tspan>
+        <tspan x="0" dy="1.4em" fill="#4ec9b0">count:</tspan> <tspan fill="#b5cea8">2</tspan>
+        <tspan x="0" dy="1.4em" fill="#4ec9b0">total:</tspan> <tspan fill="#b5cea8">47</tspan>
+        <tspan x="0" dy="1.4em" fill="#4ec9b0">help:</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#569cd6">-</tspan> <tspan fill="#9cdcfe">discord recent -c general</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

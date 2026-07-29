@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">discord-cli — Local-first Discord data CLI for search, analytics, and AI agents</title>
+  <desc id="hero-desc">Hero showing project name, one-sentence value, and real terminal output demonstrating structured YAML output for agent integration.</desc>
+
+  <defs>
+    <linearGradient id="promptGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ec9b0"/>
+      <stop offset="100%" stop-color="#6bc9b8"/>
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4d4d4"/>
+      <stop offset="100%" stop-color="#b8b8b8"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#a371f7"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="url(#arrowGrad)"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2d2d2d" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="300" fill="#1e1e1e"/>
+  <rect width="1200" height="300" fill="url(#gridPattern)"/>
+
+  <g transform="translate(60, 40)">
+    <text x="0" y="0" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="44" font-weight="700" fill="#d4d4d4" letter-spacing="-0.5px">
+      <tspan fill="url(#promptGrad)">discord</tspan><tspan fill="#858585">-cli</tspan>
+    </text>
+    <rect x="255" y="-34" width="10" height="42" fill="#4ec9b0" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1s" repeatCount="indefinite"/>
+    </rect>
+
+    <text x="0" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="400" fill="#b8b8b8" line-height="1.4">
+      <tspan x="0" dy="1.2em">Local-first Discord data CLI</tspan>
+      <tspan x="0" dy="1.4em">for search, analytics, and AI agents</tspan>
+    </text>
+
+    <g transform="translate(0, 140)">
+      <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500" fill="#4ec9b0">SQLite storage  •  TOON/YAML/JSON  •  Agent-ready</text>
+    </g>
+
+    <g transform="translate(0, 195)">
+      <rect x="0" y="-8" width="360" height="40" rx="4" fill="#2d2d2d" stroke="#3d3d3d"/>
+      <text x="16" y="18" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="12" fill="#d4d4d4">
+        <tspan fill="#858585">$ </tspan><tspan fill="#dcdcaa">uv tool install</tspan> <tspan fill="#4ec9b0">kabi-discord-cli</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(0, 265)">
+      <rect x="0" y="0" width="100" height="26" rx="3" fill="#2d2d2d" stroke="#3d3d3d"/>
+      <text x="50" y="18" text-anchor="middle" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="600" fill="#4ec9b0">v0.2.8</text>
+    </g>
+    <g transform="translate(115, 265)">
+      <rect x="0" y="0" width="100" height="26" rx="3" fill="#2d2d2d" stroke="#3d3d3d"/>
+      <text x="50" y="18" text-anchor="middle" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="11" font-weight="600" fill="#dcdcaa">Python 3.10+</text>
+    </g>
+  </g>
+
+  <g transform="translate(660, 40)">
+    <rect x="0" y="0" width="480" height="220" rx="6" fill="#1a1a1a" stroke="#2d2d2d" filter="url(#softShadow)"/>
+    <rect x="0" y="0" width="480" height="34" rx="6" fill="#252526"/>
+    <circle cx="16" cy="17" r="6" fill="#ff5f57"/>
+    <circle cx="38" cy="17" r="6" fill="#ffbd2e"/>
+    <circle cx="60" cy="17" r="6" fill="#28ca42"/>
+    <text x="240" y="22" text-anchor="middle" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="10" fill="#858585">discord search "rust" -c general --yaml</text>
+
+    <g transform="translate(14, 52)">
+      <text x="0" y="0" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="12" line-height="1.6">
+        <tspan fill="url(#promptGrad)">discord $</tspan>
+      </text>
+
+      <text x="0" y="28" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="11" fill="#b8b8b8" line-height="1.5">
+        <tspan fill="#858585">ok: </tspan><tspan fill="#4ec9b0">true</tspan>
+        <tspan x="0" dy="1.4em" fill="#858585">schema_version: </tspan><tspan fill="#ce9178">"1"</tspan>
+        <tspan x="0" dy="1.4em" fill="#858585">data:</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#dcdcaa">-</tspan><tspan fill="#858585"> msg_id: </tspan><tspan fill="#b5cea8">"123..."</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#858585">sender_name: </tspan><tspan fill="#ce9178">"alice"</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#858585">content: </tspan><tspan fill="#ce9178">"Rust async..."</tspan>
+        <tspan x="0" dy="1.4em">  </tspan><tspan fill="#858585">timestamp: </tspan><tspan fill="#9cdcfe">"2024-01-15T14:32:10Z"</tspan>
+        <tspan x="0" dy="1.4em" fill="#858585">count: </tspan><tspan fill="#b5cea8">2</tspan>
+        <tspan x="0" dy="1.4em" fill="#858585">total: </tspan><tspan fill="#b5cea8">47</tspan>
+      </text>
+    </g>
+  </g>
+
+  <text x="600" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#8b949e" text-anchor="middle">
+    <tspan fill="#58a6ff">discord</tspan> <tspan fill="#8b949e">|</tspan> <tspan fill="#7ee787">local-first</tspan> <tspan fill="#8b949e">|</tspan> <tspan fill="#a371f7">agent-ready</tspan>
+  </text>
+</svg>
