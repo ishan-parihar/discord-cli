@@ -13,6 +13,19 @@ info() { echo -e "${GREEN}[INFO]${NC} $*"; }
 warn() { echo -e "${YELLOW}[WARN]${NC} $*"; }
 err() { echo -e "${RED}[ERR]${NC} $*"; }
 
+# ============================================================================
+# FRESH-SYSTEM INSTALL (curl | bash)
+# ============================================================================
+# Run this on any fresh system to install uv + discord-cli in one go:
+#
+#   curl -LsSf https://raw.githubusercontent.com/ishan-parihar/discord-cli/main/install.sh | bash
+#
+# Or with explicit uv install:
+#
+#   curl -LsSf https://astral.sh/uv/install.sh | sh && \
+#   curl -LsSf https://raw.githubusercontent.com/ishan-parihar/discord-cli/main/install.sh | bash
+# ============================================================================
+
 # Check for uv
 if ! command -v uv &>/dev/null; then
     err "uv not found. Install it first:"
@@ -24,7 +37,7 @@ fi
 info "Installing discord-cli with uv..."
 
 # Install as a uv tool (isolated, user-scoped, binary in ~/.local/bin)
-uv tool install --from . kabi-discord-cli
+uv tool install --from git+https://github.com/ishan-parihar/discord-cli kabi-discord-cli
 
 # Verify installation
 if command -v discord &>/dev/null; then
@@ -42,7 +55,7 @@ else
         discord --version
     else
         err "Installation completed but 'discord' command not found."
-        echo "Try: export PATH=\"$HOME/.local/bin:\$PATH\""
+        echo "Try: export PATH=\"\$HOME/.local/bin:\$PATH\""
         exit 1
     fi
 fi
