@@ -298,6 +298,8 @@ OUTPUT=toon discord search "term"
 - Rate limits handled automatically with retry + jitter
 - Upgrade regularly: `uv tool upgrade kabi-discord-cli`
 
+**Read-only.** `discord-cli` is a read/tail/search tool — it has no mutation commands (no send, no react, no delete). It authenticates, lists servers/channels/members, and fetches/history/syncs/search queries messages. Sending and managing content is out of scope.
+
 ---
 
 ## Development
