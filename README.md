@@ -4,6 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/uv-install%20via%20uv-blueviolet?logo=uv" alt="uv install">
+[![CI](https://github.com/ishan-parihar/discord-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/ishan-parihar/discord-cli/actions/workflows/ci.yml)
   <img src="https://img.shields.io/pypi/v/kabi-discord-cli.svg" alt="PyPI version">
   <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License">
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python">
