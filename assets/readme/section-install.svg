@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-labelledby="sec1-title sec1-desc">
-  <title id="sec1-title">Installation & Quick Start</title>
+  <title id="sec1-title">Installation &amp; Quick Start</title>
   <desc id="sec1-desc">Section banner for installation and quick start commands</desc>
 
   <defs>
@@ -12,7 +12,7 @@
   <rect width="1200" height="140" fill="#1e1e1e"/>
 
   <text x="80" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="32" font-weight="700" fill="#d4d4d4">
-    <tspan fill="url(#sec1Grad)">Install</tspan> & <tspan fill="url(#sec1Grad)">Quick Start</tspan>
+    <tspan fill="url(#sec1Grad)">Install</tspan> &amp; <tspan fill="url(#sec1Grad)">Quick Start</tspan>
   </text>
 
   <text x="80" y="95" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="14" fill="#858585">
