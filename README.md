@@ -26,6 +26,8 @@
 
 ```bash
 # Recommended: uv tool (isolated, user-scoped, ~/.local/bin)
+
+<!-- T2I HERO SPEC — Subject: a local-first Discord data CLI — Discord server channels feeding messages, search, and analytics into a local cache with agent-friendly JSON output; guild icons as orbiting nodes. Composition: server channels → cache vault → agent query. Palette: discord blurple #5865f2 → deep slate → cache emerald #34d399. Style: dark flat vector, channel-strip motif, no text. 16:9. -->
 uv tool install kabi-discord-cli
 
 # Alternative: pipx
