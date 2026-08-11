@@ -1,3 +1,5 @@
+<!-- T2I HERO SPEC — Subject: a local-first Discord data CLI — Discord server channels feeding messages, search, and analytics into a local cache with agent-friendly JSON output; guild icons as orbiting nodes. Composition: server channels → cache vault → agent query. Palette: discord blurple #5865f2 → deep slate → cache emerald #34d399. Style: dark flat vector, channel-strip motif, no text. 16:9. -->
+
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="discord-cli — Local-first Discord data CLI for search, analytics, and AI agents">
 </p>
@@ -5,6 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/uv-install%20via%20uv-blueviolet?logo=uv" alt="uv install">
 <img src="https://img.shields.io/badge/LOC-3.6K-informational?style=flat-square" alt="LOC">
+<img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
 <a href="https://github.com/ishan-parihar/discord-cli/actions/workflows/ci.yml"><img src="https://github.com/ishan-parihar/discord-cli/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/pypi/v/kabi-discord-cli.svg" alt="PyPI version">
   <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License">
@@ -29,7 +32,7 @@
 ```bash
 # Recommended: uv tool (isolated, user-scoped, ~/.local/bin)
 
-<!-- T2I HERO SPEC — Subject: a local-first Discord data CLI — Discord server channels feeding messages, search, and analytics into a local cache with agent-friendly JSON output; guild icons as orbiting nodes. Composition: server channels → cache vault → agent query. Palette: discord blurple #5865f2 → deep slate → cache emerald #34d399. Style: dark flat vector, channel-strip motif, no text. 16:9. -->
+
 uv tool install kabi-discord-cli
 
 # Alternative: pipx
