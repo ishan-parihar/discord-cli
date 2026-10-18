@@ -19,3 +19,4 @@ dist/
 .sisyphus/
 .oh-my-opencode/
 .history/
+.ruff_cache/
