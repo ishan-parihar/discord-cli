@@ -3,6 +3,8 @@
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="discord-cli — Local-first Discord data CLI for search, analytics, and AI agents">
 </p>
+Every document in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.md](docs/PAGE-INDEX.md).
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/uv-install%20via%20uv-blueviolet?logo=uv" alt="uv install">
