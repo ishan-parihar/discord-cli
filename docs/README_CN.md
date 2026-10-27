@@ -96,7 +96,7 @@ discord timeline --by hour --json
 | `status` | 检查当前 token 是否有效 |
 | `whoami [--json]` | 查看当前账号资料 |
 
-### Discord API (`discord dc ...`)
+### Discord 接口命令
 
 | 命令 | 说明 |
 |------|------|
@@ -145,6 +145,6 @@ uv run python -m pytest
 uv build
 ```
 
-## License
+## 许可证
 
 Apache-2.0

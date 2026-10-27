@@ -25,6 +25,28 @@ Every document in `docs/` is listed with the question it answers in [docs/PAGE-I
 
 ---
 
+## Contents
+
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [How It Works](#how-it-works)
+- [Agent Integration (AXI-Compliant)](#agent-integration-axi-compliant)
+  - [Envelope Schema](#envelope-schema)
+  - [Structured Errors (stdout, never stderr)](#structured-errors-stdout-never-stderr)
+  - [Agent-Friendly Flags](#agent-friendly-flags)
+- [Commands](#commands)
+  - [Auth & Account](#auth--account)
+  - [Discord API (`discord dc ...`)](#discord-api-discord-dc)
+  - [Local Query (SQLite)](#local-query-sqlite)
+  - [Data Management](#data-management)
+- [Session Hook (Ambient Context)](#session-hook-ambient-context)
+- [Agent Tips](#agent-tips)
+- [Architecture](#architecture)
+- [Safety & Limits](#safety--limits)
+- [Development](#development)
+- [License](#license)
+- [☕ Support & Sponsorship](#-support--sponsorship)
+
 <p align="center">
   <img src="./assets/readme/section-install.svg" width="100%" alt="Installation & Quick Start">
 </p>
