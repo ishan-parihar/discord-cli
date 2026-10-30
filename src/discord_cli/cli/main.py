@@ -463,6 +463,18 @@ def hook(shell: str, force: bool):
         console.print("Run 'discord hook --force' to install for all supported agents.")
 
 
+@cli.command("update")
+@click.option("--check", is_flag=True, help="Check without installing")
+@click.option("--json", "json_output", is_flag=True, help="Emit update status as JSON")
+def update_command(check: bool, json_output: bool) -> None:
+    """Update this CLI through the package manager that owns it."""
+    from ..updater import run_update
+
+    args = (["--check"] if check else []) + (["--json"] if json_output else [])
+    raise click.exceptions.Exit(
+        run_update(args, application="discord", package="kabi-discord-cli")
+    )
+cli.add_command(update_command, "upgrade")
 # Register sub-groups
 cli.add_command(discord_group, "dc")
 
