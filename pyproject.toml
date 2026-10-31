@@ -1,5 +1,5 @@
 [project]
-name = "kabi-discord-cli"
+name = "discord-lyr"
 version = "0.2.8"
 description = "Discord CLI for local-first sync, search, export, and agent-friendly retrieval"
 readme = "README.md"

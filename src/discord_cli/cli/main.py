@@ -42,7 +42,7 @@ def _discord_user_payload(user: dict) -> dict[str, object]:
 
 
 @click.group(invoke_without_command=True)
-@click.version_option(package_name="kabi-discord-cli")
+@click.version_option(package_name="discord-lyr")
 @click.option("-v", "--verbose", is_flag=True, help="Enable debug logging.")
 @click.pass_context
 def cli(ctx: click.Context, verbose: bool):
@@ -463,6 +463,14 @@ def hook(shell: str, force: bool):
         console.print("Run 'discord hook --force' to install for all supported agents.")
 
 
+@cli.command("donate")
+def donate():
+    """Support development 💜"""
+    print("Star the repo  : https://github.com/ishan-parihar/discord-lyr")
+    print("GitHub Sponsors: https://github.com/sponsors/ishan-parihar")
+    print("Razorpay (UPI) : https://rzp.io/rzp/ishan-parihar")
+
+
 @cli.command("update")
 @click.option("--check", is_flag=True, help="Check without installing")
 @click.option("--json", "json_output", is_flag=True, help="Emit update status as JSON")
@@ -472,9 +480,13 @@ def update_command(check: bool, json_output: bool) -> None:
 
     args = (["--check"] if check else []) + (["--json"] if json_output else [])
     raise click.exceptions.Exit(
-        run_update(args, application="discord", package="kabi-discord-cli")
+        run_update(args, application="discord", package="discord-lyr")
     )
+
+
 cli.add_command(update_command, "upgrade")
+
+
 # Register sub-groups
 cli.add_command(discord_group, "dc")
 

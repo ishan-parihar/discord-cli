@@ -10,8 +10,8 @@ Every document in `docs/` is listed with the question it answers in [docs/PAGE-I
   <img src="https://img.shields.io/badge/uv-install%20via%20uv-blueviolet?logo=uv" alt="uv install">
 <img src="https://img.shields.io/badge/LOC-3.6K-informational?style=flat-square" alt="LOC">
 <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
-<a href="https://github.com/ishan-parihar/discord-cli/actions/workflows/ci.yml"><img src="https://github.com/ishan-parihar/discord-cli/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <img src="https://img.shields.io/pypi/v/kabi-discord-cli.svg" alt="PyPI version">
+<a href="https://github.com/ishan-parihar/discord-lyr/actions/workflows/ci.yml"><img src="https://github.com/ishan-parihar/discord-lyr/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/pypi/v/discord-lyr.svg" alt="PyPI version">
   <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License">
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python">
   <img src="https://img.shields.io/badge/AXI-compliant-green?logo=cli" alt="AXI compliant">
@@ -57,10 +57,10 @@ Every document in `docs/` is listed with the question it answers in [docs/PAGE-I
 # Recommended: uv tool (isolated, user-scoped, ~/.local/bin)
 
 
-uv tool install kabi-discord-cli
+uv tool install discord-lyr
 
 # Alternative: pipx
-pipx install kabi-discord-cli
+pipx install discord-lyr
 
 # From source (development)
 git clone https://github.com/jackwener/discord-cli.git
@@ -327,7 +327,7 @@ OUTPUT=toon discord search "term"
 - No bot token required (uses user token from local session)
 - Messages stored locally in SQLite — never uploaded
 - Rate limits handled automatically with retry + jitter
-- Upgrade regularly: `uv tool upgrade kabi-discord-cli`
+- Upgrade regularly: `uv tool upgrade discord-lyr`
 
 **Read-only.** `discord-cli` is a read/tail/search tool — it has no mutation commands (no send, no react, no delete). It authenticates, lists servers/channels/members, and fetches/history/syncs/search queries messages. Sending and managing content is out of scope.
 
@@ -361,4 +361,4 @@ Your support funds new features, releases, and infrastructure for the whole ecos
 
 ## Updating
 
-Use `discord update --check` to check without changing the installation, or `discord update` to update it. `discord upgrade` is an alias. The command delegates to the manager that owns this installation (`uv`, `pipx`, or `pip`) and refuses editable, local-checkout, system, or unknown installs instead of replacing package-manager-owned files. For example: `uv tool upgrade kabi-discord-cli`.
+Use `discord update --check` to check without changing the installation, or `discord update` to update it. `discord upgrade` is an alias. The command delegates to the manager that owns this installation (`uv`, `pipx`, or `pip`) and refuses editable, local-checkout, system, or unknown installs instead of replacing package-manager-owned files. For example: `uv tool upgrade discord-lyr`.

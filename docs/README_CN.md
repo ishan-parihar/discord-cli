@@ -1,7 +1,7 @@
 # discord-cli
 
 [![CI](https://github.com/jackwener/discord-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/jackwener/discord-cli/actions/workflows/ci.yml)
-[![PyPI version](https://img.shields.io/pypi/v/kabi_discord_cli.svg)](https://pypi.org/project/kabi-discord-cli/)
+[![PyPI version](https://img.shields.io/pypi/v/discord_lyr.svg)](https://pypi.org/project/discord-lyr/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
 
 [English](./README.md)
@@ -38,9 +38,9 @@ discord-cli 通过 Discord HTTP API 访问你本机登录态里的 **user token*
 
 ```bash
 # PyPI
-uv tool install kabi-discord-cli
+uv tool install discord-lyr
 # 或
-pipx install kabi-discord-cli
+pipx install discord-lyr
 
 # 从 GitHub 安装
 uv tool install git+https://github.com/jackwener/discord-cli.git
@@ -54,8 +54,8 @@ uv sync --extra dev
 升级到最新版本：
 
 ```bash
-uv tool upgrade kabi-discord-cli
-# 或：pipx upgrade kabi-discord-cli
+uv tool upgrade discord-lyr
+# 或：pipx upgrade discord-lyr
 ```
 
 > **提示：** 建议定期升级，避免因版本过旧导致的 API 调用异常。

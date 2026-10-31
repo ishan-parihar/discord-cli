@@ -6,7 +6,7 @@ body:
     id: version
     attributes:
       label: Current version
-      description: "Run `discord --version` or `pip show kabi-discord-cli | grep Version`"
+      description: "Run `discord --version` or `pip show discord-lyr | grep Version`"
       placeholder: "e.g. 1.0.0"
     validations:
       required: false

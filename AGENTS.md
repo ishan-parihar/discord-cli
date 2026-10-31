@@ -6,7 +6,7 @@ end every iteration with `genome close`.
 
 ## What this project is
 
-A local-first Discord CLI (`kabi-discord-cli`, command `discord`) that syncs messages from the Discord HTTP API into a local SQLite cache with FTS5 search, analytics, and TOON/YAML/JSON output for agents. The entry point is `discord_cli.cli.main:cli`, installed with `uv tool install kabi-discord-cli`. It uses a user token from the local session and is meant to be run by the owner of that account, on machines they control.
+A local-first Discord CLI (`discord-lyr`, command `discord`) that syncs messages from the Discord HTTP API into a local SQLite cache with FTS5 search, analytics, and TOON/YAML/JSON output for agents. The entry point is `discord_cli.cli.main:cli`, installed with `uv tool install discord-lyr`. It uses a user token from the local session and is meant to be run by the owner of that account, on machines they control.
 
 ## Gate
 

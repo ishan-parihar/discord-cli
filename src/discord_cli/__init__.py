@@ -3,6 +3,6 @@
 try:
     from importlib.metadata import version
 
-    __version__ = version("kabi-discord-cli")
+    __version__ = version("discord-lyr")
 except Exception:
     __version__ = "0.0.0"

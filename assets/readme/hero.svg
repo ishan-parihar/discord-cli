@@ -49,7 +49,7 @@
     <g transform="translate(0, 195)">
       <rect x="0" y="-8" width="360" height="40" rx="4" fill="#2d2d2d" stroke="#3d3d3d"/>
       <text x="16" y="18" font-family="JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace" font-size="12" fill="#d4d4d4">
-        <tspan fill="#858585">$ </tspan><tspan fill="#dcdcaa">uv tool install</tspan> <tspan fill="#4ec9b0">kabi-discord-cli</tspan>
+        <tspan fill="#858585">$ </tspan><tspan fill="#dcdcaa">uv tool install</tspan> <tspan fill="#4ec9b0">discord-lyr</tspan>
       </text>
     </g>
 

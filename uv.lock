@@ -399,7 +399,7 @@ wheels = [
 ]
 
 [[package]]
-name = "kabi-discord-cli"
+name = "discord-lyr"
 version = "0.2.8"
 source = { editable = "." }
 dependencies = [

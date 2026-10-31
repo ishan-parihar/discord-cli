@@ -1,5 +1,5 @@
 ---
-name: discord-cli
+name: discord-lyr
 description: Discord CLI with YAML-first structured output for AI agents — fetch chat history, search messages, sync channels, and AI analysis
 author: jackwener
 version: "0.2.8"
@@ -32,12 +32,12 @@ When you need machine-readable output:
 
 ```bash
 # Install
-uv tool install kabi-discord-cli
-# Or: pipx install kabi-discord-cli
+uv tool install discord-lyr
+# Or: pipx install discord-lyr
 
 # Upgrade to latest (recommended to avoid API errors)
-uv tool upgrade kabi-discord-cli
-# Or: pipx upgrade kabi-discord-cli
+uv tool upgrade discord-lyr
+# Or: pipx upgrade discord-lyr
 ```
 
 - Token configured via `discord auth --save`
